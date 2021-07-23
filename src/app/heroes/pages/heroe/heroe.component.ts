@@ -23,11 +23,10 @@ export class HeroeComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params
-      .pipe(switchMap(({ id }) => this.heroeService.getHeroeById(id))
-    )
-    .subscribe(heroe => {
-      this.heroe = heroe;
-    });
+      .pipe(
+        switchMap(({ id }) => this.heroeService.getHeroeById(id))
+      )
+    .subscribe(heroe => this.heroe = heroe);
   }
 
   regresar() {
