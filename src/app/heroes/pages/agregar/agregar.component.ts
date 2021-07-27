@@ -86,7 +86,6 @@ export class AgregarComponent implements OnInit {
 
     dialog.afterClosed().subscribe(
       (result) => {
-        console.log(result);
 
         if(result) {
           this.heroeService.borrarHeroe(this.heroe.id!)
